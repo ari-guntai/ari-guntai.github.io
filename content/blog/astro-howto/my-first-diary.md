@@ -52,6 +52,11 @@ htmlでいう\<ol>の\<li>の書き方
 ![ロコモコ](img/caree.png)
 \![画像説明]\(img/caree.png(画像ファイルの場所))
 
+### 透明な写真
+
+![ロコモコ](img/1C417.png)
+
+
 ## javascript
 
 javascriptのデモ<br>
@@ -98,7 +103,7 @@ mdファイルの中にhtmlの形式で\<style>や\<script>を書くと認識し
     color: #ef4444;
     font-size: 1.3rem;
   }
-</>
+</style>
 
 <script>
   // 何回押されたかを記録する変数
@@ -116,3 +121,59 @@ mdファイルの中にhtmlの形式で\<style>や\<script>を書くと認識し
     });
   }
 </script>
+
+## 赤・青・黄の箱を3つ作る
+
+JavaScriptで、赤・青・黄の3つの箱をページに追加するサンプルです。
+
+<div id="colorBoxesContainer" class="color-boxes"></div>
+
+<style>
+  .color-boxes {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+
+  .color-box {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+<script>
+  const container = document.getElementById('colorBoxesContainer');
+  if (container) {
+    const colors = [
+      { name: '赤', color: '#ff4444' },
+      { name: '青', color: '#4488ff' },
+      { name: '黄', color: '#ffcc00' },
+    ];
+
+    colors.forEach(({ name, color }) => {
+      const box = document.createElement('div');
+      box.className = 'color-box';
+      box.style.backgroundColor = color;
+      box.title = `${name}の箱`;
+      container.appendChild(box);
+    });
+  }
+</script>
+
+## 漢字へのフリガナ
+
+<p class="furigana-text">
+  <ruby>美人局<rt>びじんきょく</rt></ruby>、
+  <ruby>仙人掌<rt>せんにんてのひら</rt></ruby>、
+  <ruby>好々爺<rt>すこすこじい</rt></ruby>
+</p>
+
+<style>
+  .furigana-text ruby rt {
+    font-size: 0.6em;
+    color: #64748b;
+  }
+</style>
