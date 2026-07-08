@@ -98,7 +98,7 @@ mdファイルの中にhtmlの形式で\<style>や\<script>を書くと認識し
     color: #ef4444;
     font-size: 1.3rem;
   }
-</>
+</style>
 
 <script>
   // 何回押されたかを記録する変数
